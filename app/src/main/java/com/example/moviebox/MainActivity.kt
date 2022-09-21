@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         val secondPage = findViewById<Button>(R.id.movielistbtn)
         secondPage.setOnClickListener {
-            val Intent = Intent(this,MainActivity2::class.java)
-            startActivity(Intent)
+            val intent = Intent(this,MainActivity2::class.java)
+            startActivity(intent)
         }
     }
 }
