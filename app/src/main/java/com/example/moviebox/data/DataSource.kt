@@ -9,17 +9,5 @@ import com.example.moviebox.model.Movie
 object DataSource {
 
     val movies: MutableList<Movie> = mutableListOf(
-        Movie(
-            R.drawable.luca,
-            "Roger",
-            "GREAT MOVIE",
-            4
-        ),
-        Movie(
-            R.drawable.luca,
-            "Fuzzy",
-            "AWFUL MOVIE",
-            1
-        )
     )
 }

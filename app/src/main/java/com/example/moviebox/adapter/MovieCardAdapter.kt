@@ -66,7 +66,7 @@ class MovieCardAdapter(
         val resources = context?.resources
         //get the data at the current position
         val movie = movies[position]
-        holder.movieImageView.setImageResource(movie.imageResourceId)
+        holder.movieImageView.setImageBitmap(movie.imageResourceBitmap)
         //set text for name and age
         holder.movieNameTextView.text = movie.name
 //        holder.bunnyAgeTextView.text = resources?.getString(R.string.bunny_age,bunny.age)
