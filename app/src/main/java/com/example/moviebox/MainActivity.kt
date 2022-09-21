@@ -35,20 +35,23 @@ class MainActivity : AppCompatActivity() {
         }
         val editText = findViewById<TextView>(R.id.movie_name_edit_text)
         val reviewText = findViewById<TextView>(R.id.movie_review_edit_text)
-        val movies: MutableList<Movie> = DataSource.movies as MutableList<Movie>
-        movies.add(
-            Movie(
-                R.drawable.luca,
-                editText.text.toString(),
-                reviewText.text.toString(),
-                3
-            )
-        )
 
         val secondPage = findViewById<Button>(R.id.movie_list_btn)
         secondPage.setOnClickListener {
+            val movies: MutableList<Movie> = DataSource.movies
+            movies.add(
+                Movie(
+                    R.drawable.luca,
+                    editText.text.toString(),
+                   reviewText.text.toString(),
+                    3
+                )
+            )
+//            DataSource.movies = movies
+
             val intent = Intent(this,MainActivity2::class.java)
             startActivity(intent)
+
         }
     }
 
