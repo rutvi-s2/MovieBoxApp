@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 Movie(
                     R.drawable.luca,
                     editText.text.toString(),
-                   reviewText.text.toString(),
+                    reviewText.text.toString(),
                     3
                 )
             )

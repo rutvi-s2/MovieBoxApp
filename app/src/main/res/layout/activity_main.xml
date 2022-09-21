@@ -93,27 +93,27 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/movie_name_edit_text"
-        android:layout_width="210dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="212dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="72dp"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="@id/movie_name_text"
         app:layout_constraintTop_toTopOf="@id/movie_box_logo" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/movie_review_edit_text"
-        android:layout_width="150dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="208dp"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="@id/movie_review_text"
-        app:layout_constraintTop_toTopOf="@id/rating_options" />
-
     <!--Button to open the image selector-->
 
     <!--ImageView to preview the selected image-->
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/movie_review_edit_text"
+        android:layout_width="156dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="192dp"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@id/movie_review_text"
+        app:layout_constraintTop_toTopOf="@id/rating_options" />
 
     <Button
         android:id="@+id/select_image"
