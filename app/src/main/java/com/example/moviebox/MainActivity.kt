@@ -24,13 +24,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
-        var BSelectImage = findViewById<Button>(R.id.BSelectImage)
-        var IVPreviewImage = findViewById<ImageView>(R.id.IVPreviewImage)
+        var selectImage = findViewById<Button>(R.id.select_image)
+//        var previewImage = findViewById<ImageView>(R.id.preview_image)
 
-        BSelectImage.setOnClickListener {
+        selectImage.setOnClickListener {
             imageChooser()
         }
-        val secondPage = findViewById<Button>(R.id.movielistbtn)
+        val secondPage = findViewById<Button>(R.id.movie_list_btn)
         secondPage.setOnClickListener {
             val intent = Intent(this,MainActivity2::class.java)
             startActivity(intent)
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         if (result.resultCode
             == RESULT_OK
         ) {
-            var IVPreviewImage = findViewById<ImageView>(R.id.IVPreviewImage)
+            var previewImage = findViewById<ImageView>(R.id.preview_image)
             val data = result.data
             // do your operation from here....
             if (data != null
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                             this.contentResolver,
                             selectedImageUri
                         )
-                        IVPreviewImage.setImageBitmap(
+                        previewImage.setImageBitmap(
                             selectedImageBitmap
                         )
                     } else{
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                             selectedImageUri!!
                         )
                         val bitmap = ImageDecoder.decodeBitmap(source)
-                        IVPreviewImage.setImageBitmap(
+                        previewImage.setImageBitmap(
                             bitmap
                         )
                     }

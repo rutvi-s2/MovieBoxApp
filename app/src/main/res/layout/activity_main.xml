@@ -116,7 +116,7 @@
     <!--ImageView to preview the selected image-->
 
     <Button
-        android:id="@+id/BSelectImage"
+        android:id="@+id/select_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -127,17 +127,17 @@
         app:layout_constraintTop_toBottomOf="@id/movie_review_edit_text"/>
 
     <ImageView
-        android:id="@+id/IVPreviewImage"
+        android:id="@+id/preview_image"
         android:layout_width="189dp"
         android:layout_height="181dp"
-        android:layout_below="@id/BSelectImage"
+        android:layout_below="@id/select_image"
         app:layout_constraintStart_toStartOf="@id/movie_review_text"
-        app:layout_constraintTop_toBottomOf="@id/BSelectImage"
-        app:layout_constraintBottom_toTopOf="@id/movielistbtn"/>
+        app:layout_constraintTop_toBottomOf="@id/select_image"
+        app:layout_constraintBottom_toTopOf="@id/movie_list_btn"/>
 
 
     <Button
-        android:id="@+id/movielistbtn"
+        android:id="@+id/movie_list_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
