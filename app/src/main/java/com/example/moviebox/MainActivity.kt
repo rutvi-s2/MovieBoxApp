@@ -1,8 +1,11 @@
 package com.example.moviebox
 
+import android.R.attr
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.ImageDecoder
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -12,6 +15,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moviebox.data.DataSource
 import com.example.moviebox.databinding.ActivityMainBinding
@@ -21,7 +25,7 @@ import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-
+    lateinit var imageResourceBitmap: Bitmap;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -35,19 +39,25 @@ class MainActivity : AppCompatActivity() {
         }
         val editText = findViewById<TextView>(R.id.movie_name_edit_text)
         val reviewText = findViewById<TextView>(R.id.movie_review_edit_text)
+        val ratingNumber = when (binding.ratingOptions.checkedRadioButtonId) {
+            R.id.option_one_star -> 1
+            R.id.option_two_star -> 2
+            R.id.option_three_star -> 3
+            else -> 4
+        }
+
 
         val secondPage = findViewById<Button>(R.id.movie_list_btn)
         secondPage.setOnClickListener {
             val movies: MutableList<Movie> = DataSource.movies
             movies.add(
                 Movie(
-                    R.drawable.luca,
+                    imageResourceBitmap,
                     editText.text.toString(),
-                   reviewText.text.toString(),
-                    3
+                    reviewText.text.toString(),
+                    ratingNumber
                 )
             )
-//            DataSource.movies = movies
 
             val intent = Intent(this,MainActivity2::class.java)
             startActivity(intent)
@@ -85,6 +95,7 @@ class MainActivity : AppCompatActivity() {
                         previewImage.setImageBitmap(
                             selectedImageBitmap
                         )
+                        imageResourceBitmap = selectedImageBitmap
                     } else{
                         val source = ImageDecoder.createSource(this.contentResolver,
                             selectedImageUri!!
@@ -93,6 +104,7 @@ class MainActivity : AppCompatActivity() {
                         previewImage.setImageBitmap(
                             bitmap
                         )
+                        imageResourceBitmap = bitmap
                     }
                 } catch (e: IOException) {
                     e.printStackTrace()
