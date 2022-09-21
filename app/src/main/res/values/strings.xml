@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MovieBox</string>
+    <string name="one_star">1 Star</string>
+    <string name="two_stars">2 Stars</string>
+    <string name="three_stars">3 Stars</string>
+    <string name="four_stars">4 Stars</string>
+    <string name="movie_name">Movie Name:</string>
+    <string name="rate_movie">Rate the Movie:</string>
+    <string name="review_movie">Review the Movie:</string>
 </resources>
