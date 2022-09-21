@@ -6,5 +6,8 @@ import androidx.annotation.DrawableRes
  */
 data class Movie(
     @DrawableRes val imageResourceId: Int,
-    val name: String
+    val name: String,
+    val review: String,
+    val rating: Int
+
 )

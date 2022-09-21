@@ -9,10 +9,13 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.moviebox.data.DataSource
 import com.example.moviebox.databinding.ActivityMainBinding
+import com.example.moviebox.model.Movie
 import java.io.IOException
 
 
@@ -30,6 +33,18 @@ class MainActivity : AppCompatActivity() {
         selectImage.setOnClickListener {
             imageChooser()
         }
+        val editText = findViewById<TextView>(R.id.movie_name_edit_text)
+        val reviewText = findViewById<TextView>(R.id.movie_review_edit_text)
+        val movies: MutableList<Movie> = DataSource.movies as MutableList<Movie>
+        movies.add(
+            Movie(
+                R.drawable.luca,
+                editText.text.toString(),
+                reviewText.text.toString(),
+                3
+            )
+        )
+
         val secondPage = findViewById<Button>(R.id.movie_list_btn)
         secondPage.setOnClickListener {
             val intent = Intent(this,MainActivity2::class.java)
@@ -53,7 +68,6 @@ class MainActivity : AppCompatActivity() {
         ) {
             var previewImage = findViewById<ImageView>(R.id.preview_image)
             val data = result.data
-            // do your operation from here....
             if (data != null
                 && data.data != null
             ) {
