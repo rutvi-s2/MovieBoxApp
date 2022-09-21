@@ -111,6 +111,30 @@
         app:layout_constraintStart_toStartOf="@id/movie_review_text"
         app:layout_constraintTop_toTopOf="@id/rating_options" />
 
+    <!--Button to open the image selector-->
+
+    <!--ImageView to preview the selected image-->
+
+    <Button
+        android:id="@+id/BSelectImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="SELECT IMAGE"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/movie_review_text"
+        app:layout_constraintTop_toBottomOf="@id/movie_review_edit_text"/>
+
+    <ImageView
+        android:id="@+id/IVPreviewImage"
+        android:layout_width="189dp"
+        android:layout_height="181dp"
+        android:layout_below="@id/BSelectImage"
+        app:layout_constraintStart_toStartOf="@id/movie_review_text"
+        app:layout_constraintTop_toBottomOf="@id/BSelectImage"
+        app:layout_constraintBottom_toTopOf="@id/movielistbtn"/>
+
 
     <Button
         android:id="@+id/movielistbtn"
@@ -119,5 +143,7 @@
         android:layout_marginEnd="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
