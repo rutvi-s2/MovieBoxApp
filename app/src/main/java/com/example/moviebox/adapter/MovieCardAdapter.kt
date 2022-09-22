@@ -93,7 +93,6 @@ class MovieCardAdapter(
         holder.movieImageView.setImageBitmap(movie.imageResourceBitmap)
         //set text for name and age
         holder.movieNameTextView.text = movie.name
-//        holder.bunnyAgeTextView.text = resources?.getString(R.string.bunny_age,bunny.age)
     }
 
 }

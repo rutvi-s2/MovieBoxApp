@@ -64,43 +64,23 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-//        val secondPage = findViewById<ImageButton>(R.id.movie_list_btn)
-//        secondPage.setOnClickListener {
-//            val movies: MutableList<Movie> = DataSource.movies
-//            movies.add(
-//                Movie(
-//                    imageResourceBitmap,
-//                    editText.text.toString(),
-//                    reviewText.text.toString(),
-//                    ratingNumber
-//                )
-//            )
-//
-//            val intent = Intent(this,MainActivity2::class.java)
-//            startActivity(intent)
-//
-//        }
     }
 
-    fun imageChooser(){
+    private fun imageChooser(){
         val intent = Intent()
-        intent.setType("image/*")
-        intent.setAction(Intent.ACTION_GET_CONTENT)
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
 
         launchSomeActivity.launch(intent)
     }
 
-    var launchSomeActivity = registerForActivityResult<Intent, ActivityResult>(
+    private var launchSomeActivity = registerForActivityResult<Intent, ActivityResult>(
         ActivityResultContracts.StartActivityForResult()
     ) { result: ActivityResult ->
-        if (result.resultCode
-            == RESULT_OK
-        ) {
+        if (result.resultCode  == RESULT_OK) {
             var previewImage = findViewById<ImageView>(R.id.preview_image)
             val data = result.data
-            if (data != null
-                && data.data != null
-            ) {
+            if (data != null && data.data != null) {
                 val selectedImageUri: Uri? = data.data
                 val selectedImageBitmap: Bitmap
                 try {

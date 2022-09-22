@@ -1,13 +1,16 @@
 package com.example.moviebox
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Base64
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.moviebox.data.DataSource
 import com.example.moviebox.databinding.ActivityMain3Binding
-import android.content.Intent
-import android.widget.ImageButton
+import com.example.moviebox.model.Movie
 
 class MainActivity3 : AppCompatActivity(){
 
@@ -37,11 +40,13 @@ class MainActivity3 : AppCompatActivity(){
             specific_movie_name.text = extras.getString("movie_name")
             specific_movie_rating.text = extras.getInt("movie_rating").toString()
             specific_movie_review.text = extras.getString("movie_review")
-//            specific_movie_image.setImageResource(extras.getInt("movie_image"))
-//            specific_movie_image.setImageBitmap(extras.getParcelable("movie_image"))
-//            val byteArray = intent.getByteArrayExtra("movie_image")
-//            val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray!!.size)
-//            specific_movie_image.setImageBitmap(bmp)
+            val movies: MutableList<Movie> = DataSource.movies
+            for (movie in movies){
+                if (movie.name == specific_movie_name.text){
+                    specific_movie_image.setImageBitmap(movie.imageResourceBitmap)
+                    break
+                }
+            }
         }
 
 
