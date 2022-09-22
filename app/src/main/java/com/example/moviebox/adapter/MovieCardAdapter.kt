@@ -16,12 +16,15 @@
 package com.example.moviebox.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.moviebox.MainActivity3
 import com.example.moviebox.R
 import com.example.moviebox.data.DataSource
 import com.example.moviebox.databinding.ActivityMainBinding
@@ -32,7 +35,8 @@ import com.example.moviebox.model.Movie
  * from the appropriate data source
  */
 class MovieCardAdapter(
-    private val context: Context
+    private val context: Context,
+    private val listener: OnItemClickListener
 ): RecyclerView.Adapter<MovieCardAdapter.MovieCardViewHolder>() {
 
     // initialize the data using the bunnies List found in DataSource
@@ -40,10 +44,30 @@ class MovieCardAdapter(
     /**
      * Initialize view elements
      */
-    class MovieCardViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
+    inner class MovieCardViewHolder(view: View?): RecyclerView.ViewHolder(view!!),
+    View.OnClickListener{
         // declare and initialize all of the bunny list item UI components
         val movieImageView: ImageView = view!!.findViewById(R.id.movie_grid_image)
         val movieNameTextView: TextView = view!!.findViewById(R.id.movie_grid_name)
+
+        init {
+            if (view != null) {
+                view.setOnClickListener(this)
+            }
+        }
+
+        override fun onClick(p0: View?) {
+//            val intent = Intent(this, MainActivity3::class.java)
+//            startActivity(intent)
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(position)
+            }
+        }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieCardViewHolder {
@@ -71,4 +95,5 @@ class MovieCardAdapter(
         holder.movieNameTextView.text = movie.name
 //        holder.bunnyAgeTextView.text = resources?.getString(R.string.bunny_age,bunny.age)
     }
+
 }

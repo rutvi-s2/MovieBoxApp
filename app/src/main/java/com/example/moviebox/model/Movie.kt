@@ -10,5 +10,4 @@ data class Movie(
     val name: String,
     val review: String,
     val rating: Int
-
 )
