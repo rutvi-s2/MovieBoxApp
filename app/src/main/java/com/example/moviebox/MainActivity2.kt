@@ -31,7 +31,8 @@ class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
 
     }
 
-    // TODO: on click of a moviecardapater, open up fullscreenmovieadapter
+    // when moviecardadapter is clicked, send the data over the intent and start the intent
+    // for screen 3
     override fun onItemClick(position: Int, movies: List<Movie>) {
         val intent = Intent(this,MainActivity3::class.java)
         intent.putExtra("movie_name", movies[position].name)
