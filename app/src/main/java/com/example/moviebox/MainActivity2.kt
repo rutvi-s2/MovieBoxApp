@@ -2,6 +2,7 @@ package com.example.moviebox
 
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
@@ -39,6 +40,11 @@ class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
 //        movies[position].imageResourceBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
 //        val byteArray: ByteArray = stream.toByteArray()
 //        intent.putExtra("movie_image", byteArray)
+//        var bStream  =  ByteArrayOutputStream()
+//        movies[position].imageResourceBitmap.compress(Bitmap.CompressFormat.PNG, 50, bStream)
+//        val byteArray = bStream.toByteArray()
+//        intent.putExtra("image", byteArray )
+        intent.putExtra("movie_image", R.drawable.luca)
         intent.putExtra("movie_name", movies[position].name)
         intent.putExtra("movie_review", movies[position].review)
         intent.putExtra("movie_rating", movies[position].rating)

@@ -1,13 +1,17 @@
 package com.example.moviebox
 
+import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moviebox.databinding.ActivityMain3Binding
-import android.content.Intent
-import android.widget.ImageButton
+import java.io.ByteArrayOutputStream
+
 
 class MainActivity3 : AppCompatActivity(){
 
@@ -37,6 +41,22 @@ class MainActivity3 : AppCompatActivity(){
             specific_movie_name.text = extras.getString("movie_name")
             specific_movie_rating.text = extras.getInt("movie_rating").toString()
             specific_movie_review.text = extras.getString("movie_review")
+            specific_movie_image.setImageResource(extras.getInt("movie_image"))
+//            var bitmap : Bitmap? =null
+//            if (intent.hasExtra("movie_image")){
+//                //convert to bitmap
+//                val byteArray = intent.getByteArrayExtra("image")
+//                if (byteArray != null) {
+//                    bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+//                }
+//                if (bitmap != null) {
+//                    //Convert bitmap to BitmapDrawable
+//                    var bitmapDrawable = BitmapDrawable( resources , bitmap)
+//                    specific_movie_image.setImageDrawable(bitmapDrawable)
+//                }
+////                specific_movie_image.setImageBitmap(bitmap)
+//            }
+
 //            specific_movie_image.setImageResource(extras.getInt("movie_image"))
 //            specific_movie_image.setImageBitmap(extras.getParcelable("movie_image"))
 //            val byteArray = intent.getByteArrayExtra("movie_image")
