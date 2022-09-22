@@ -1,16 +1,14 @@
 package com.example.moviebox
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Bitmap
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.moviebox.adapter.MovieCardAdapter
-import com.example.moviebox.data.DataSource
-import com.example.moviebox.data.DataSource.movies
 import com.example.moviebox.databinding.ActivityMain2Binding
 import com.example.moviebox.model.Movie
+import java.io.ByteArrayOutputStream
+
 
 class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
 
@@ -20,7 +18,6 @@ class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
         super.onCreate(savedInstanceState)
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-//        setContentView(R.layout.activity_main2)
 
         binding.gridRecyclerView.adapter = MovieCardAdapter(
             applicationContext, this)
@@ -28,29 +25,17 @@ class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
         // Specify fixed size to improve performance
         binding.gridRecyclerView.setHasFixedSize(true)
 
-//        val thirdPage = findViewById<Button>(R.id.movielistbtn)
-//        thirdPage.setOnClickListener {
-//            val Intent = Intent(this,MainActivity3::class.java)
-//            startActivity(Intent)
-//        }
-
-
-//        val thirdPage: ImageView = findViewById(R.id.movie_grid_image)
-//        thirdPage.setOnClickListener {
-//
-//            val intent = Intent(this,MainActivity3::class.java)
-//            startActivity(intent)
-//
-//        }
     }
     // TODO: on click of a moviecardapater, open up fullscreenmovieadapter
-    override fun onItemClick(position: Int) {
+    override fun onItemClick(position: Int, movies: List<Movie>) {
         val intent = Intent(this,MainActivity3::class.java)
-        intent.putExtra("movie_image", movies[position].imageResourceBitmap)
+//        val stream = ByteArrayOutputStream()
+//        movies[position].imageResourceBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+//        val byteArray: ByteArray = stream.toByteArray()
+//        intent.putExtra("movie_image", byteArray)
         intent.putExtra("movie_name", movies[position].name)
         intent.putExtra("movie_review", movies[position].review)
         intent.putExtra("movie_rating", movies[position].rating)
-//        movies[position]
         startActivity(intent)
     }
 
