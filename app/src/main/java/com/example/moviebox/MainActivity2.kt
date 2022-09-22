@@ -2,9 +2,7 @@ package com.example.moviebox
 
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.Bitmap.CompressFormat
 import android.os.Bundle
-import android.util.Base64
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moviebox.adapter.MovieCardAdapter

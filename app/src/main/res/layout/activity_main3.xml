@@ -19,42 +19,92 @@
         android:id="@+id/full_screen_movie_image"
         android:layout_width="match_parent"
         android:layout_height="194dp"
+        android:layout_marginTop="16dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<!--    <TextView-->
+<!--        android:id="@+id/movie_name_goes_here"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="69dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        android:text="Movie Name:"-->
+<!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--        android:textSize="25sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/full_screen_movie_image" />-->
+
     <TextView
         android:id="@+id/full_screen_movie_name"
-        android:layout_width="171dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="238dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/full_screen_movie_image"
         tools:text="Avengers" />
 
     <TextView
-        android:id="@+id/full_screen_movie_rating"
-        android:layout_width="176dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="8dp"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:id="@+id/movie_rating_goes_here"
+        android:layout_width="198dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="16dp"
+        android:text="Movie Rating:"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="30sp"
+        android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/full_screen_movie_name"
+        app:layout_constraintTop_toBottomOf="@id/full_screen_movie_name" />
+
+    <TextView
+        android:id="@+id/full_screen_movie_rating"
+        android:layout_width="115dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movie_rating_goes_here"
         tools:text="1 Star" />
 
     <TextView
-        android:id="@+id/full_screen_movie_review"
-        android:layout_width="265dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="8dp"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:id="@+id/movie_review_goes_here"
+        android:layout_width="219dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="20dp"
+        android:text="Movie Review:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="30sp"
+        android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/full_screen_movie_rating"
+        app:layout_constraintTop_toBottomOf="@id/full_screen_movie_rating" />
+
+    <TextView
+        android:id="@+id/full_screen_movie_review"
+        android:layout_width="312dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movie_review_goes_here"
         tools:text="This was a great movie!" />
 
     <ImageButton
