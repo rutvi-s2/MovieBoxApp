@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             else -> "4 Stars"
         }
 
-        val secondPage = findViewById<ImageButton>(R.id.movie_list_btn)
+        val secondPage = findViewById<Button>(R.id.submit_button)
         secondPage.setOnClickListener {
             val movies: MutableList<Movie> = DataSource.movies
             movies.add(
@@ -58,11 +58,30 @@ class MainActivity : AppCompatActivity() {
                     ratingNumber
                 )
             )
-
             val intent = Intent(this,MainActivity2::class.java)
             startActivity(intent)
-
         }
+        val submitReview = findViewById<ImageButton>(R.id.movie_list_btn)
+        submitReview.setOnClickListener {
+            val intent = Intent(this,MainActivity2::class.java)
+            startActivity(intent)
+        }
+
+//        val submitReview = findViewById<Button>(R.id.submit_button)
+//        secondPage.setOnClickListener {
+//            val movies: MutableList<Movie> = DataSource.movies
+//            movies.add(
+//                Movie(
+//                    imageResourceBitmap,
+//                    editText.text.toString(),
+//                    reviewText.text.toString(),
+//                    ratingNumber
+//                )
+//            )
+//            val intent = Intent(this,MainActivity2::class.java)
+//            startActivity(intent)
+//        }
+
 
     }
 
