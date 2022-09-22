@@ -57,4 +57,28 @@
         app:layout_constraintTop_toBottomOf="@id/full_screen_movie_rating"
         tools:text="This was a great movie!" />
 
+    <ImageButton
+        android:id="@+id/movie_list_btn"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="87dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="50dp"
+        android:src="@drawable/moviebutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/add_movie_btn"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="87dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="155dp"
+        android:src="@drawable/pencilbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintEnd_toStartOf="@id/movie_list_btn"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

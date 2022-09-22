@@ -3,6 +3,7 @@ package com.example.moviebox
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moviebox.adapter.MovieCardAdapter
 import com.example.moviebox.databinding.ActivityMain2Binding
@@ -24,6 +25,11 @@ class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
 
         // Specify fixed size to improve performance
         binding.gridRecyclerView.setHasFixedSize(true)
+        val firstPage = findViewById<ImageButton>(R.id.add_movie_btn)
+        firstPage.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
     // TODO: on click of a moviecardapater, open up fullscreenmovieadapter

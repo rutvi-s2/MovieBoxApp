@@ -6,7 +6,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moviebox.databinding.ActivityMain3Binding
-
+import android.content.Intent
+import android.widget.ImageButton
 
 class MainActivity3 : AppCompatActivity(){
 
@@ -17,7 +18,16 @@ class MainActivity3 : AppCompatActivity(){
         setContentView(R.layout.activity_main3)
         binding = ActivityMain3Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val secondPage = findViewById<ImageButton>(R.id.movie_list_btn)
+        secondPage.setOnClickListener {
+            val intent = Intent(this,MainActivity2::class.java)
+            startActivity(intent)
+        }
+        val firstPage = findViewById<ImageButton>(R.id.add_movie_btn)
+        firstPage.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
         val extras = intent.extras
         val specific_movie_name = findViewById<TextView>(R.id.full_screen_movie_name)
         val specific_movie_rating = findViewById<TextView>(R.id.full_screen_movie_rating)

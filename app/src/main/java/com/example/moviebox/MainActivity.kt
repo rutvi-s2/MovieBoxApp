@@ -11,6 +11,7 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.result.ActivityResult
@@ -46,8 +47,7 @@ class MainActivity : AppCompatActivity() {
             else -> 4
         }
 
-
-        val secondPage = findViewById<Button>(R.id.movie_list_btn)
+        val secondPage = findViewById<ImageButton>(R.id.movie_list_btn)
         secondPage.setOnClickListener {
             val movies: MutableList<Movie> = DataSource.movies
             movies.add(
@@ -63,6 +63,23 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
+//        val secondPage = findViewById<ImageButton>(R.id.movie_list_btn)
+//        secondPage.setOnClickListener {
+//            val movies: MutableList<Movie> = DataSource.movies
+//            movies.add(
+//                Movie(
+//                    imageResourceBitmap,
+//                    editText.text.toString(),
+//                    reviewText.text.toString(),
+//                    ratingNumber
+//                )
+//            )
+//
+//            val intent = Intent(this,MainActivity2::class.java)
+//            startActivity(intent)
+//
+//        }
     }
 
     fun imageChooser(){
