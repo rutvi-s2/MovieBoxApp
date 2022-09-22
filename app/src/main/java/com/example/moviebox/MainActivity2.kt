@@ -1,14 +1,12 @@
 package com.example.moviebox
 
 import android.content.Intent
-import android.graphics.Bitmap
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moviebox.adapter.MovieCardAdapter
 import com.example.moviebox.databinding.ActivityMain2Binding
 import com.example.moviebox.model.Movie
-import java.io.ByteArrayOutputStream
 
 
 class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
