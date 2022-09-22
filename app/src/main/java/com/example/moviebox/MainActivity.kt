@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity() {
         val editText = findViewById<TextView>(R.id.movie_name_edit_text)
         val reviewText = findViewById<TextView>(R.id.movie_review_edit_text)
         val ratingNumber = when (binding.ratingOptions.checkedRadioButtonId) {
-            R.id.option_one_star -> 1
-            R.id.option_two_star -> 2
-            R.id.option_three_star -> 3
-            else -> 4
+            R.id.option_one_star -> "1 Star"
+            R.id.option_two_star -> "2 Stars"
+            R.id.option_three_star -> "3 Stars"
+            else -> "4 Stars"
         }
 
         val secondPage = findViewById<ImageButton>(R.id.movie_list_btn)

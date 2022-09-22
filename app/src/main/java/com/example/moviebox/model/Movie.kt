@@ -9,5 +9,5 @@ data class Movie(
     val imageResourceBitmap: Bitmap,
     val name: String,
     val review: String,
-    val rating: Int
+    val rating: String
 )

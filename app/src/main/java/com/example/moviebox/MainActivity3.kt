@@ -36,7 +36,7 @@ class MainActivity3 : AppCompatActivity(){
         val specific_movie_image = findViewById<ImageView>(R.id.full_screen_movie_image)
         if (extras != null) {
             specific_movie_name.text = extras.getString("movie_name")
-            specific_movie_rating.text = extras.getInt("movie_rating").toString()
+            specific_movie_rating.text = extras.getString("movie_rating")
             specific_movie_review.text = extras.getString("movie_review")
             val movies: MutableList<Movie> = DataSource.movies
             for (movie in movies){
