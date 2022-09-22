@@ -46,7 +46,10 @@ class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
     // TODO: on click of a moviecardapater, open up fullscreenmovieadapter
     override fun onItemClick(position: Int) {
         val intent = Intent(this,MainActivity3::class.java)
-//        intent.putExtra("some_object", movies[position])
+        intent.putExtra("movie_image", movies[position].imageResourceBitmap)
+        intent.putExtra("movie_name", movies[position].name)
+        intent.putExtra("movie_review", movies[position].review)
+        intent.putExtra("movie_rating", movies[position].rating)
 //        movies[position]
         startActivity(intent)
     }
