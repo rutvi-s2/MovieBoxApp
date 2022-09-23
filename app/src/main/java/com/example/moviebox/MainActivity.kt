@@ -85,13 +85,18 @@ class MainActivity : AppCompatActivity() {
         ActivityResultContracts.StartActivityForResult()
     ) { result: ActivityResult ->
         if (result.resultCode  == RESULT_OK) {
+            //image view to preview an image
             val previewImage = findViewById<ImageView>(R.id.preview_image)
             val data = result.data
+            //check if there is a selected image
             if (data != null && data.data != null) {
                 val selectedImageUri: Uri? = data.data
                 val selectedImageBitmap: Bitmap
                 try {
+                    //in order to support all SDK versions, get bitmap in various ways
                     if(Build.VERSION.SDK_INT < 28){
+                        //use getBitmap function if older version is running and set image view's
+                        //bitmap to the selectedImageBitmap
                         selectedImageBitmap = MediaStore.Images.Media.getBitmap(
                             this.contentResolver,
                             selectedImageUri
@@ -101,6 +106,8 @@ class MainActivity : AppCompatActivity() {
                         )
                         imageResourceBitmap = selectedImageBitmap
                     } else{
+                        //use source and decodeBitmap function if newer version is running and set
+                        //image view's bitmap to the selectedImageBitmap
                         val source = ImageDecoder.createSource(this.contentResolver,
                             selectedImageUri!!
                         )
