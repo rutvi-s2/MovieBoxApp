@@ -23,6 +23,7 @@ class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
 
         // Specify fixed size to improve performance
         binding.gridRecyclerView.setHasFixedSize(true)
+        // Intent takes user back to the add reviews page
         val firstPage = binding.addMovieBtn
         firstPage.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)

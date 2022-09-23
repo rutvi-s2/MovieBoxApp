@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var selectImage = findViewById<Button>(R.id.select_image)
-//        var previewImage = findViewById<ImageView>(R.id.preview_image)
 
         selectImage.setOnClickListener {
             imageChooser()
@@ -61,6 +60,8 @@ class MainActivity : AppCompatActivity() {
                     ratingNumber
                 )
             )
+            // Takes the user to their reviews after they have
+            // submitted a review
             val intent = Intent(this,MainActivity2::class.java)
             startActivity(intent)
         }
