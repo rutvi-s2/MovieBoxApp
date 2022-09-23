@@ -11,7 +11,7 @@ import com.example.moviebox.databinding.ActivityMain3Binding
 import com.example.moviebox.model.Movie
 
 class MainActivity3 : AppCompatActivity(){
-    // declare binding varaible to set text for third screen
+    // declare binding variable to set text for third screen
     private lateinit var binding: ActivityMain3Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {

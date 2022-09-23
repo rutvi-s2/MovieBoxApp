@@ -66,6 +66,7 @@
         android:layout_marginTop="20dp"
         android:text="Movie Review:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAlignment="center"
         android:textSize="30sp"
         android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
