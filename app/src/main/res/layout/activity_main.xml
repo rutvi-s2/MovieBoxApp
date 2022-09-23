@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+<!--    text view that displays app name "Movie Box" at the top of the screen-->
     <TextView
         android:id="@+id/movie_box_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MovieBox"
+        android:text="@string/moviebox_words"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
+<!--    text view for "Movie Name:" to be displayed where user needs to enter movie name-->
     <TextView
         android:id="@+id/movie_name_text"
         android:layout_width="wrap_content"
@@ -32,6 +33,7 @@
         app:layout_constraintTop_toTopOf="@id/movie_box_logo"
         app:layout_constraintVertical_bias="0.11" />
 
+<!--    text view for "Rate the Movie" to be displayed where user needs to enter movie rating-->
     <TextView
         android:id="@+id/rate_movie"
         android:layout_width="wrap_content"
@@ -42,6 +44,7 @@
         app:layout_constraintStart_toStartOf="@id/movie_name_text"
         app:layout_constraintTop_toBottomOf="@id/movie_name_text" />
 
+<!--    radio group with radio buttons for rating options 1-4-->
     <RadioGroup
         android:id="@+id/rating_options"
         android:layout_width="wrap_content"
@@ -78,6 +81,7 @@
 
     </RadioGroup>
 
+<!--    text view for "Review the Movie" to be displayed where user needs to review the movie-->
     <TextView
         android:id="@+id/movie_review_text"
         android:layout_width="wrap_content"
@@ -91,6 +95,7 @@
         app:layout_constraintTop_toTopOf="@id/rating_options"
         app:layout_constraintVertical_bias="0.383" />
 
+<!--    TextInputEditText for user to enter movie name-->
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/movie_name_edit_text"
         android:layout_width="212dp"
@@ -101,10 +106,7 @@
         app:layout_constraintStart_toStartOf="@id/movie_name_text"
         app:layout_constraintTop_toTopOf="@id/movie_box_logo" />
 
-    <!--Button to open the image selector-->
-
-    <!--ImageView to preview the selected image-->
-
+<!--TextInputEditText for user to enter movie review-->
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/movie_review_edit_text"
         android:layout_width="156dp"
@@ -115,17 +117,19 @@
         app:layout_constraintStart_toStartOf="@id/movie_review_text"
         app:layout_constraintTop_toTopOf="@id/rating_options" />
 
+<!--   button so user can select movie image from their phone -->
     <Button
         android:id="@+id/select_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="SELECT IMAGE"
+        android:text="@string/select_image_words"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@id/movie_review_text"
         app:layout_constraintTop_toBottomOf="@id/movie_review_edit_text"/>
 
+<!--    imageView so the image user selected can be previewed-->
     <ImageView
         android:id="@+id/preview_image"
         android:layout_width="189dp"
@@ -133,20 +137,22 @@
         android:layout_below="@id/select_image"
         app:layout_constraintStart_toStartOf="@id/movie_review_text"
         app:layout_constraintTop_toBottomOf="@id/select_image"
-        app:layout_constraintBottom_toTopOf="@id/movie_list_btn"/>
+        app:layout_constraintBottom_toTopOf="@id/movie_list_btn"
+        android:contentDescription="@string/movie_image_preview" />
 
+<!--    button so user can submit their movie entree and move to second screen-->
     <Button
         android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_marginLeft="10dp"
-        android:text="SUBMIT REVIEW"
+        android:layout_marginStart="10dp"
+        android:text="@string/submit_review_words"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/preview_image"
-        app:layout_constraintStart_toStartOf="@id/preview_image"
-       />
+        app:layout_constraintStart_toStartOf="@id/preview_image" />
 
+<!--    button so user can not enter a movie, but still move to second screen -->
     <ImageButton
         android:id="@+id/movie_list_btn"
         style="@style/Widget.MaterialComponents.Button.Icon"
@@ -157,7 +163,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/goto_second_screen_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

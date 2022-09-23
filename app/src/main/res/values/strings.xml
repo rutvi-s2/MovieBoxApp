@@ -12,4 +12,8 @@
     <string name="movie_review_words">Movie Review:</string>
     <string name="goto_second_screen_button">button_image_togo_to_second_screen</string>
     <string name="goto_first_screen_button">image_button_togo_to_first_screen</string>
+    <string name="moviebox_words">MovieBox</string>
+    <string name="select_image_words">SELECT IMAGE</string>
+    <string name="movie_image_preview">movie_image_preview</string>
+    <string name="submit_review_words">SUBMIT REVIEW</string>
 </resources>
