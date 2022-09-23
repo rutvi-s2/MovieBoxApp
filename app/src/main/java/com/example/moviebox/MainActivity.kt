@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             imageChooser()
         }
 
+        // Lets user include a review with a rating, review, and title
         val submitReview = findViewById<Button>(R.id.submit_button)
         submitReview.setOnClickListener {
             val editText = findViewById<TextView>(R.id.movie_name_edit_text)
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.option_three_star -> "3 Stars"
                 else -> "4 Stars"
             }
+            // Adds the new review to the list
             val movies: MutableList<Movie> = DataSource.movies
             movies.add(
                 Movie(
@@ -62,6 +64,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,MainActivity2::class.java)
             startActivity(intent)
         }
+        // If user clicks on the movie button, it will take them to the
+        // second page, the list of movies
         val secondPage = findViewById<ImageButton>(R.id.movie_list_btn)
         secondPage.setOnClickListener {
             val intent = Intent(this,MainActivity2::class.java)
@@ -69,6 +73,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Allows the user to upload a photo
+    // Takes the user to another application to choose a photo
     private fun imageChooser(){
         val intent = Intent()
         intent.type = "image/*"
@@ -77,6 +83,7 @@ class MainActivity : AppCompatActivity() {
         launchSomeActivity.launch(intent)
     }
 
+    // Gets the image the user input and displays the image
     private var launchSomeActivity = registerForActivityResult<Intent, ActivityResult>(
         ActivityResultContracts.StartActivityForResult()
     ) { result: ActivityResult ->
