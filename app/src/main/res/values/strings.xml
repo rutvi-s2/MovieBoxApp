@@ -16,4 +16,5 @@
     <string name="select_image_words">SELECT IMAGE</string>
     <string name="movie_image_preview">movie_image_preview</string>
     <string name="submit_review_words">SUBMIT REVIEW</string>
+    <string name="movie_grid_image">movie grid image</string>
 </resources>

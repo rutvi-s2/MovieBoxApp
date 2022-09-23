@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+<!--        imageView for movie image to appear in the movie card-->
         <ImageView
             android:id="@+id/movie_grid_image"
             android:layout_width="match_parent"
@@ -21,8 +22,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            android:contentDescription="@string/movie_grid_image" />
 
+<!--        textView for movie name to appear in the movie card-->
         <TextView
             android:id="@+id/movie_grid_name"
             android:layout_width="wrap_content"
@@ -33,7 +35,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
