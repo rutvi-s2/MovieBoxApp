@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity3">
 
+<!--    imageView for movie image-->
     <ImageView
         android:id="@+id/full_screen_movie_image"
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/movie_image" />
 
-
+<!-- text view for movie name -->
     <TextView
         android:id="@+id/full_screen_movie_name"
         android:layout_width="238dp"
@@ -32,6 +33,7 @@
         app:layout_constraintTop_toBottomOf="@id/full_screen_movie_image"
         tools:text="Avengers" />
 
+<!--    text view for "Movie Rating:" to display -->
     <TextView
         android:id="@+id/movie_rating_goes_here"
         android:layout_width="198dp"
@@ -46,6 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/full_screen_movie_name" />
 
+<!--    textView for actual movie rating user inputted to display-->
     <TextView
         android:id="@+id/full_screen_movie_rating"
         android:layout_width="115dp"
@@ -59,6 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/movie_rating_goes_here" />
 
+<!--    textView for "Movie Review:" to display -->
     <TextView
         android:id="@+id/movie_review_goes_here"
         android:layout_width="219dp"
@@ -73,6 +77,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/full_screen_movie_rating" />
 
+<!--    textView for actual movie review user entered to display-->
     <TextView
         android:id="@+id/full_screen_movie_review"
         android:layout_width="312dp"
@@ -87,6 +92,7 @@
         app:layout_constraintTop_toBottomOf="@id/movie_review_goes_here"
         tools:text="This was a great movie!" />
 
+<!--    imageButton so user can go back to the second screen-->
     <ImageButton
         android:id="@+id/movie_list_btn"
         style="@style/Widget.MaterialComponents.Button.Icon"
@@ -99,6 +105,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/goto_second_screen_button" />
 
+<!--    imageButton so user can go back to the first screen-->
     <ImageButton
         android:id="@+id/add_movie_btn"
         style="@style/Widget.MaterialComponents.Button.Icon"
