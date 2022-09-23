@@ -15,19 +15,14 @@
 */
 package com.example.moviebox.adapter
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.moviebox.MainActivity3
 import com.example.moviebox.R
 import com.example.moviebox.data.DataSource
-import com.example.moviebox.databinding.ActivityMainBinding
 import com.example.moviebox.model.Movie
 
 /**
@@ -35,7 +30,6 @@ import com.example.moviebox.model.Movie
  * from the appropriate data source
  */
 class MovieCardAdapter(
-    private val context: Context,
     private val listener: OnItemClickListener
 ): RecyclerView.Adapter<MovieCardAdapter.MovieCardViewHolder>() {
 
@@ -50,6 +44,7 @@ class MovieCardAdapter(
         val movieImageView: ImageView = view!!.findViewById(R.id.movie_grid_image)
         val movieNameTextView: TextView = view!!.findViewById(R.id.movie_grid_name)
 
+        // set up the onClick so movie card can be clickable in order to view third screen
         init {
             if (view != null) {
                 view.setOnClickListener(this)
@@ -57,8 +52,6 @@ class MovieCardAdapter(
         }
 
         override fun onClick(p0: View?) {
-//            val intent = Intent(this, MainActivity3::class.java)
-//            startActivity(intent)
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
                 listener.onItemClick(position, movies)
@@ -66,6 +59,7 @@ class MovieCardAdapter(
         }
     }
 
+    // declare the onItemClick to be initialized in MainActivity2.kt
     interface OnItemClickListener {
         fun onItemClick(position: Int, movies: List<Movie>)
     }
@@ -74,20 +68,18 @@ class MovieCardAdapter(
         // determine which list item should be used and set layout accordingly
         // grid vs vertical/horizontal
 
-        var adapterLayout = LayoutInflater.from(parent.context)
+        val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.movie_grid_item, parent, false)
         // inflate layout and return
         return MovieCardViewHolder(adapterLayout)
     }
 
     override fun getItemCount(): Int {
-//        return size of bunnies data set
+        // return size of bunnies data set
         return movies.size
     }
 
     override fun onBindViewHolder(holder: MovieCardViewHolder, position: Int) {
-        // set the resource for the current bunny
-        val resources = context?.resources
         //get the data at the current position
         val movie = movies[position]
         holder.movieImageView.setImageBitmap(movie.imageResourceBitmap)

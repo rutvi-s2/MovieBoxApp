@@ -2,7 +2,6 @@ package com.example.moviebox
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moviebox.adapter.MovieCardAdapter
 import com.example.moviebox.databinding.ActivityMain2Binding
@@ -18,8 +17,7 @@ class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.gridRecyclerView.adapter = MovieCardAdapter(
-            applicationContext, this)
+        binding.gridRecyclerView.adapter = MovieCardAdapter(this)
 
         // Specify fixed size to improve performance
         binding.gridRecyclerView.setHasFixedSize(true)
