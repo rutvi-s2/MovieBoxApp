@@ -13,6 +13,7 @@ import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -38,17 +39,17 @@ class MainActivity : AppCompatActivity() {
         selectImage.setOnClickListener {
             imageChooser()
         }
-        val editText = findViewById<TextView>(R.id.movie_name_edit_text)
-        val reviewText = findViewById<TextView>(R.id.movie_review_edit_text)
-        val ratingNumber = when (binding.ratingOptions.checkedRadioButtonId) {
-            R.id.option_one_star -> "1 Star"
-            R.id.option_two_star -> "2 Stars"
-            R.id.option_three_star -> "3 Stars"
-            else -> "4 Stars"
-        }
 
-        val secondPage = findViewById<Button>(R.id.submit_button)
-        secondPage.setOnClickListener {
+        val submitReview = findViewById<Button>(R.id.submit_button)
+        submitReview.setOnClickListener {
+            val editText = findViewById<TextView>(R.id.movie_name_edit_text)
+            val reviewText = findViewById<TextView>(R.id.movie_review_edit_text)
+            val ratingNumber = when (findViewById<RadioGroup>(R.id.rating_options).checkedRadioButtonId) {
+                R.id.option_one_star -> "1 Star"
+                R.id.option_two_star -> "2 Stars"
+                R.id.option_three_star -> "3 Stars"
+                else -> "4 Stars"
+            }
             val movies: MutableList<Movie> = DataSource.movies
             movies.add(
                 Movie(
@@ -61,28 +62,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,MainActivity2::class.java)
             startActivity(intent)
         }
-        val submitReview = findViewById<ImageButton>(R.id.movie_list_btn)
-        submitReview.setOnClickListener {
+        val secondPage = findViewById<ImageButton>(R.id.movie_list_btn)
+        secondPage.setOnClickListener {
             val intent = Intent(this,MainActivity2::class.java)
             startActivity(intent)
         }
-
-//        val submitReview = findViewById<Button>(R.id.submit_button)
-//        secondPage.setOnClickListener {
-//            val movies: MutableList<Movie> = DataSource.movies
-//            movies.add(
-//                Movie(
-//                    imageResourceBitmap,
-//                    editText.text.toString(),
-//                    reviewText.text.toString(),
-//                    ratingNumber
-//                )
-//            )
-//            val intent = Intent(this,MainActivity2::class.java)
-//            startActivity(intent)
-//        }
-
-
     }
 
     private fun imageChooser(){

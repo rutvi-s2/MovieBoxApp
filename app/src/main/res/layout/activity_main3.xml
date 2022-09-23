@@ -6,37 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity3">
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Page 3!"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
     <ImageView
         android:id="@+id/full_screen_movie_image"
         android:layout_width="match_parent"
         android:layout_height="194dp"
         android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/movie_name_goes_here"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="69dp"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:layout_marginTop="28dp"-->
-<!--        android:text="Movie Name:"-->
-<!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
-<!--        android:textSize="25sp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/full_screen_movie_image" />-->
 
     <TextView
         android:id="@+id/full_screen_movie_name"
@@ -44,10 +23,10 @@
         android:layout_height="72dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="20dp"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="50sp"
         android:textStyle="bold"
-        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/full_screen_movie_image"
         tools:text="Avengers" />
@@ -77,8 +56,7 @@
         android:textSize="33sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/movie_rating_goes_here"
-        tools:text="1 Star" />
+        app:layout_constraintTop_toBottomOf="@id/movie_rating_goes_here" />
 
     <TextView
         android:id="@+id/movie_review_goes_here"

@@ -23,7 +23,7 @@ class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
 
         // Specify fixed size to improve performance
         binding.gridRecyclerView.setHasFixedSize(true)
-        val firstPage = findViewById<ImageButton>(R.id.add_movie_btn)
+        val firstPage = binding.addMovieBtn
         firstPage.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
