@@ -6,11 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
+<!--    framelayout for grid view of movies-->
+    <FrameLayout android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".MainActivity2">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -20,10 +18,9 @@
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"/>
-
-
     </FrameLayout>
 
+<!--    imageButton so user can go back to first screen-->
     <ImageButton
         android:id="@+id/add_movie_btn"
         style="@style/Widget.MaterialComponents.Button.Icon"
@@ -33,6 +30,7 @@
         android:src="@drawable/pencilbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/goto_first_screen_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
