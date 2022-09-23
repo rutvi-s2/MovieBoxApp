@@ -4,7 +4,7 @@ import com.example.moviebox.R
 import com.example.moviebox.model.Movie
 
 /**
- * An object to generate a static list of bunnies
+ * An object to generate a static list of movie reviews from user
  */
 object DataSource {
 
