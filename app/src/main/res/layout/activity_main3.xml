@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/movie_image" />
 
 
     <TextView
@@ -37,7 +38,7 @@
         android:layout_height="52dp"
         android:layout_marginStart="108dp"
         android:layout_marginTop="16dp"
-        android:text="Movie Rating:"
+        android:text="@string/movie_rating_words"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="30sp"
@@ -64,7 +65,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="20dp"
-        android:text="Movie Review:"
+        android:text="@string/movie_review_words"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -92,10 +93,11 @@
         android:layout_width="87dp"
         android:layout_height="51dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginEnd="50dp"
         android:src="@drawable/moviebutton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/goto_second_screen_button" />
 
     <ImageButton
         android:id="@+id/add_movie_btn"
@@ -103,11 +105,11 @@
         android:layout_width="87dp"
         android:layout_height="51dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginRight="155dp"
+        android:layout_marginEnd="155dp"
         android:src="@drawable/pencilbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintEnd_toStartOf="@id/movie_list_btn"/>
+        app:layout_constraintEnd_toStartOf="@id/movie_list_btn"
+        android:contentDescription="@string/goto_first_screen_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

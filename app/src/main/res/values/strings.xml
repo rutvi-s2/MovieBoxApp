@@ -7,4 +7,9 @@
     <string name="movie_name">Movie Name:</string>
     <string name="rate_movie">Rate the Movie:</string>
     <string name="review_movie">Review the Movie:</string>
+    <string name="movie_image">movie image</string>
+    <string name="movie_rating_words">Movie Rating:</string>
+    <string name="movie_review_words">Movie Review:</string>
+    <string name="goto_second_screen_button">button_image_togo_to_second_screen</string>
+    <string name="goto_first_screen_button">image_button_togo_to_first_screen</string>
 </resources>
