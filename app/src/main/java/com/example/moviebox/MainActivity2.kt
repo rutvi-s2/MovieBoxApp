@@ -12,7 +12,7 @@ import com.example.moviebox.model.Movie
 class MainActivity2 : AppCompatActivity(), MovieCardAdapter.OnItemClickListener{
 
     private lateinit var binding: ActivityMain2Binding
-
+    // Creates layout for 2nd page and makes it scrollable
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMain2Binding.inflate(layoutInflater)
