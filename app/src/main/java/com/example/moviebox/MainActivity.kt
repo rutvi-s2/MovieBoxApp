@@ -2,16 +2,14 @@ package com.example.moviebox
 
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.ImageDecoder
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.RadioGroup
-import android.widget.TextView
+import android.widget.*
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val selectImage = findViewById<Button>(R.id.select_image)
+
+        imageResourceBitmap = BitmapFactory.decodeResource(resources, R.drawable.no_image_preview);
 
         selectImage.setOnClickListener {
             imageChooser()
